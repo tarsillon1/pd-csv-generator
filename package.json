@@ -1,0 +1,21 @@
+{
+  "name": "pd-csv-generator",
+  "version": "1.0.0",
+  "description": "A generator for exporting Pipelinedeals data to a csv.",
+  "license": "UNLICENSED",
+  "main": "build/Main.js",
+  "scripts": {
+    "format": "prettier --write index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "6.0.0",
+    "axios": "0.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "9.3.0",
+    "ava": "0.25.0",
+    "nodemon": "1.18.4",
+    "prettier": "1.14.0"
+  }
+}

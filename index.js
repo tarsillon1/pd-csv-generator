@@ -102,7 +102,16 @@ const PipelineDealsEntity = {
       if (entity.custom_fields) {
         Object.entries(entity.custom_fields).forEach(([key, value]) => {
           const field = fieldMap.get(key.split("_")[2]);
-          entity[field.name] = value;
+          if (field.field_type === "dropdown") {
+            for (let entry of field.custom_field_label_dropdown_entries) {
+              if (entry.id === value) {
+                entity[field.name] = entry;
+                break;
+              }
+            }
+          } else {
+            entity[field.name] = value;
+          }
         });
         delete entity.custom_fields;
       }
